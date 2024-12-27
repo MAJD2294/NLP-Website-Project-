@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>צרו קשר</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            background-color: #f0f8ff;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f0f8ff;
+            border-bottom: 2px solid #4caf50;
+        }
+        .logo-title img {
+            width: 50px;
+            height: 50px;
+            margin-right: 30px;
+        }
+        .logo-title h1 {
+            font-family: 'Papyrus', 'Georgia', serif;
+            color: #4caf50;
+            line-height: 1.5;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li a {
+            text-decoration: none;
+            font-size: 1.2em;
+            color: #4caf50;
+            font-weight: bold;
+            padding: 5px 10px;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        nav ul li a.active {
+            background-color: #4caf50;
+            color: white;
+            border: 2px solid #4caf50;
+        }
+        nav ul li a:hover {
+            background-color: #4caf50;
+            color: white;
+            border: 2px solid #4caf50;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f0f8ff;
+            border-top: 2px solid #4caf50;
+        }
+        main {
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: right;
+        }
+        h2 {
+            border: 2px solid #4caf50;
+            padding: 10px;
+            border-radius: 10px;
+            color: #4caf50;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        input, textarea, button {
+            font-family: 'Georgia', serif;
+            font-size: 1em;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #388e3c;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo-title">
+            <img src="calm-logo.png" alt="Calm Logo">
+            <h1>משי הרטמן<br>מטפלת NLP</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">בית</a></li>
+                <li><a href="services.html">שירותים</a></li>
+                <li><a href="testimonials.html">אנשים כתבו</a></li>
+                <li><a href="blogs.html">בלוגים ומאמרים</a></li>
+                <li><a href="contact.html" class="active">צרו קשר</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contact Section -->
+    <main>
+        <h2>צרו קשר</h2>
+        <form action="/submit" method="post">
+            <label for="name">שם:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">אימייל:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">הודעה:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">שלח</button>
+        </form>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 משי הרטמן - מטפלת NLP. כל הזכויות שמורות.</p>
+    </footer>
+</body>
+</html>
