@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -114,3 +115,407 @@
     </footer>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>משי הרטמן - NLP מטפלת</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            direction: rtl;
+            text-align: right;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-size: 1.2em;
+            color: #4caf50;
+            font-weight: bold;
+            padding: 5px 10px;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        nav ul li a:hover {
+            background-color: #4caf50;
+            color: white;
+            border: 2px solid #4caf50;
+        }
+
+        .testimonials-container {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 10px;
+            scroll-behavior: smooth;
+            position: relative;
+            scrollbar-width: none; /* For Firefox */
+        }
+
+        .testimonials-container::-webkit-scrollbar {
+            display: none; /* For Chrome, Safari, and Edge */
+        }
+
+        .testimonial {
+            cursor: pointer;
+            position: relative;
+            padding: 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            min-width: 300px;
+            flex-shrink: 0;
+        }
+
+        .testimonial:hover {
+            background-color: #f0f8ff;
+            transform: scale(1.02);
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .testimonial img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            float: right;
+            margin-left: 10px;
+        }
+
+        .testimonial-content {
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            max-height: 50px;
+        }
+
+        .testimonial.expanded .testimonial-content {
+            max-height: 1000px;
+        }
+
+        .testimonial p {
+            margin: 0;
+        }
+
+        .remove-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #e57373;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 14px;
+            display: none; /* Hidden by default */
+        }
+
+        .remove-button:hover {
+            background-color: #d32f2f;
+        }
+
+        .scroll-arrow {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: background-color 0.3s ease;
+        }
+
+        .scroll-arrow:hover {
+            background-color: #2e7d32;
+        }
+
+        .scroll-arrow-left {
+            left: 10px;
+        }
+
+        .scroll-arrow-right {
+            right: 10px;
+        }
+
+        .scroll-arrow i {
+            font-size: 20px;
+        }
+
+        #admin-panel {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border: 2px solid #4caf50;
+            padding: 20px;
+            z-index: 100;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        #admin-panel form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        #admin-panel input, #admin-panel textarea, #admin-panel button, #admin-panel select {
+            padding: 10px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+        }
+
+        #admin-panel button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #admin-panel button:hover {
+            background-color: #2e7d32;
+        }
+
+        .admin-button {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: none; /* Hidden by default */
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .admin-button:hover {
+            background-color: #2e7d32;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header style="display: flex; align-items: center; justify-content: space-between; background-color: #f0f8ff; padding: 10px 20px; border-bottom: 2px solid #4caf50;">
+        <div style="display: flex; align-items: center;">
+            <img src="calm-logo.png" alt="Calm Logo" style="width: 50px; height: 50px; margin-left: 30px;">
+            <h1 style="font-family: 'Papyrus', 'Georgia', serif; font-size: 3em; font-weight: bold; color: #4caf50; line-height: 1.5;">משי הרטמן<br>מטפלת NLP</h1>
+        </div>
+        <nav>
+    <ul>
+        <li><a href="index.html">בית</a></li>
+        <li><a href="services.html">שירותים</a></li>
+        <li><a href="testimonials.html">אנשים כתבו</a></li>
+        <li><a href="blogs.html">בלוגים ומאמרים</a></li>
+        <li><a href="contact.html">לפנייה ולקביעת תור</a></li>
+    </ul>
+</nav>
+    </header>
+
+    <!-- Testimonials Section -->
+    <main>
+        <h2>חוות דעת</h2>
+        <div class="testimonials-container" id="testimonials">
+            <div class="testimonial" onclick="toggleDetails(this)">
+                <button class="remove-button" onclick="removeTestimonial(event, this)">×</button>
+                <img src="no_profile_man.jpg" alt="Client Photo">
+                <div class="testimonial-content">
+                    <p><strong>״משי עזרה לי מאוד להתמודד עם אתגרים אישיים״</strong></p>
+                    <p>בזכות התהליך שעברתי, אני מרגישה מחוזקת ובטוחה יותר בעצמי.</p>
+                </div>
+            </div>
+            <div class="testimonial" onclick="toggleDetails(this)">
+                <button class="remove-button" onclick="removeTestimonial(event, this)">×</button>
+                <img src="no_profile_woman.jpeg" alt="Client Photo">
+                <div class="testimonial-content">
+                    <p><strong>״אני ממליץ בחום על משי כמטפלת NLP!״</strong></p>
+                    <p>התהליך היה מעמיק ואפקטיבי בצורה שלא תיארתי לעצמי.</p>
+                </div>
+            </div>
+            <div class="testimonial" onclick="toggleDetails(this)">
+                <button class="remove-button" onclick="removeTestimonial(event, this)">×</button>
+                <img src="no_profile_man.jpg" alt="Client Photo">
+                <div class="testimonial-content">
+                    <p><strong>״סיפור הצלחה עם עשר שורות״</strong></p>
+                    <p>
+                        התחלתי את התהליך בספקות גדולים אך עם כל מפגש גיליתי עוד תובנות. <br>
+                        המפגשים היו מלאים ברגישות ובמקצועיות בלתי מתפשרת. <br>
+                        קיבלתי כלים מעשיים להתמודד עם לחצים והצלחתי לשפר את מערכות היחסים שלי. <br>
+                        אני מרגישה מחוזקת ובטוחה יותר בעצמי.<br>
+                        תודה על התמיכה והכוונה לאורך כל הדרך. <br>
+                        התהליך היה לא פחות ממהפכני עבורי. <br>
+                        משי, את אשת מקצוע אמיתית ובעלת לב ענק.<br>
+                        ממליצה לכל מי שמחפש שינוי אמיתי בחיים.<br>
+                        תודה ענקית! <br>
+                        אני אסירת תודה על מה שעברת איתי.
+                    </p>
+                </div>
+            </div>
+            <div class="testimonial" onclick="toggleDetails(this)">
+                <button class="remove-button" onclick="removeTestimonial(event, this)">×</button>
+                <img src="no_profile_woman.jpeg" alt="Client Photo">
+                <div class="testimonial-content">
+                    <p><strong>״חוויה מרגשת ומחזקת לכל המשפחה״</strong></p>
+                    <p>כל מפגש היה מרתק ומשמעותי, תודה רבה על התמיכה.</p>
+                </div>
+            </div>
+            <div class="testimonial" onclick="toggleDetails(this)">
+                <button class="remove-button" onclick="removeTestimonial(event, this)">×</button>
+                <img src="no_profile_man.jpg" alt="Client Photo">
+                <div class="testimonial-content">
+                    <p><strong>״כלים חשובים להתמודדות עם לחצים״</strong></p>
+                    <p>הטיפול שינה את חיי והעניק לי פרספקטיבה חדשה.</p>
+                </div>
+            </div>
+        </div>
+        <button class="scroll-arrow scroll-arrow-left" onclick="scrollTestimonials(-1)"><i class="fas fa-chevron-left"></i></button>
+        <button class="scroll-arrow scroll-arrow-right" onclick="scrollTestimonials(1)"><i class="fas fa-chevron-right"></i></button>
+    </main>
+
+    <!-- Admin Panel -->
+    <button class="admin-button" onclick="toggleAdminPanel()">+</button>
+    <div id="admin-panel">
+        <form id="testimonial-form">
+            <label>בחר תמונה:</label>
+            <select id="default-image">
+                <option value="no_profile_man.jpg">תמונה ללא פרופיל של גבר</option>
+                <option value="no_profile_woman.jpeg">תמונה ללא פרופיל של אישה</option>
+                <option value="upload">העלה תמונה מותאמת אישית</option>
+            </select>
+            <input type="file" id="testimonial-image" accept="image/*" style="display: none;">
+            <label>הזן ביקורת:</label>
+            <textarea id="testimonial-text" rows="5"></textarea>
+            <button type="button" onclick="addTestimonial()">הוסף ביקורת</button>
+        </form>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 משי הרטמן - מטפלת NLP. כל הזכויות שמורות.</p>
+    </footer>
+
+    <script>
+        let isAdmin = false;
+
+        document.addEventListener('keydown', function (e) {
+            if (e.ctrlKey && e.altKey && e.key === 'm') {
+                const password = prompt('אנא הזן סיסמת מנהל');
+                if (password === 'admin123') {
+                    isAdmin = true;
+                    enableAdminFeatures();
+                } else {
+                    alert('סיסמה שגויה');
+                }
+            }
+        });
+
+        function enableAdminFeatures() {
+            document.querySelectorAll('.remove-button').forEach(button => button.style.display = 'flex');
+            document.querySelector('.admin-button').style.display = 'flex';
+        }
+
+        function toggleDetails(element) {
+            element.classList.toggle('expanded');
+        }
+
+        function scrollTestimonials(direction) {
+            const container = document.getElementById('testimonials');
+            const scrollAmount = 300; // Adjust scroll distance as needed
+            container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        }
+
+        function toggleAdminPanel() {
+            const adminPanel = document.getElementById('admin-panel');
+            adminPanel.style.display = adminPanel.style.display === 'none' || adminPanel.style.display === '' ? 'block' : 'none';
+        }
+
+        document.getElementById('default-image').addEventListener('change', function () {
+            const imageInput = document.getElementById('testimonial-image');
+            if (this.value === 'upload') {
+                imageInput.style.display = 'block';
+            } else {
+                imageInput.style.display = 'none';
+            }
+        });
+
+        function addTestimonial() {
+            const testimonialsContainer = document.getElementById('testimonials');
+            const defaultImage = document.getElementById('default-image').value;
+            const imageInput = document.getElementById('testimonial-image');
+            const textInput = document.getElementById('testimonial-text');
+
+            if (textInput.value.trim() === '') {
+                alert('נא למלא את כל השדות');
+                return;
+            }
+
+            const testimonial = document.createElement('div');
+            testimonial.className = 'testimonial';
+            testimonial.setAttribute('onclick', 'toggleDetails(this)');
+
+            let imageUrl = defaultImage;
+            if (defaultImage === 'upload' && imageInput.files.length > 0) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    imageUrl = e.target.result;
+                    addTestimonialContent(testimonialsContainer, imageUrl, textInput.value);
+                };
+                reader.readAsDataURL(imageInput.files[0]);
+                return;
+            }
+
+            addTestimonialContent(testimonialsContainer, imageUrl, textInput.value);
+        }
+
+        function addTestimonialContent(container, imageUrl, text) {
+            const testimonial = document.createElement('div');
+            testimonial.className = 'testimonial';
+            testimonial.setAttribute('onclick', 'toggleDetails(this)');
+
+            testimonial.innerHTML = `
+                <button class="remove-button" onclick="removeTestimonial(event, this)">×</button>
+                <img src="${imageUrl}" alt="Client Photo">
+                <div class="testimonial-content">
+                    <p>${text}</p>
+                </div>
+            `;
+
+            container.appendChild(testimonial);
+            document.getElementById('testimonial-image').value = '';
+            document.getElementById('testimonial-text').value = '';
+            document.getElementById('default-image').value = 'no_profile_man.jpg';
+            toggleAdminPanel();
+            enableAdminFeatures();
+        }
+
+        function removeTestimonial(event, button) {
+            event.stopPropagation(); // Prevent toggling details on remove click
+            const testimonial = button.closest('.testimonial');
+            testimonial.remove();
+        }
+    </script>
+</body>
+</html>
+>>>>>>> 0e91104 (Initial commit)
