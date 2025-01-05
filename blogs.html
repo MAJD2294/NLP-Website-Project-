@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -114,3 +115,299 @@
     </footer>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>משי הרטמן - NLP מטפלת</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #4caf50;
+            margin-bottom: 20px;
+        }
+
+        .articles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .article {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: calc(33.333% - 15px);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .article:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .article img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .article-content {
+            padding: 15px;
+            flex-grow: 1;
+        }
+
+        .article-content h3 {
+            font-size: 1.1em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .article-content .read-more-link {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #4caf50;
+            text-decoration: underline;
+        }
+
+        .admin-controls {
+            display: none; /* Hidden by default */
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 10;
+        }
+
+        .admin-controls button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            font-size: 0.8em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .article {
+                width: calc(50% - 15px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article {
+                width: 100%;
+            }
+
+            .article-content button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header style="display: flex; align-items: center; justify-content: space-between; background-color: #f0f8ff; padding: 10px 20px; border-bottom: 2px solid #4caf50;">
+        <div style="display: flex; align-items: center;">
+            <img src="calm-logo.png" alt="Calm Logo" style="width: 50px; height: 50px; margin-right: 30px;">
+            <h1 style="font-family: 'Papyrus', 'Georgia', serif; font-size: 3em; font-weight: bold; color: #4caf50; line-height: 1.5;">משי הרטמן<br>מטפלת NLP</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" style="text-decoration: none; font-size: 1.2em; color: #4caf50; font-weight: bold; padding: 5px 10px; border: 2px solid transparent; border-radius: 10px; transition: all 0.3s ease;">בית</a></li>
+                <li><a href="services.html" style="text-decoration: none; font-size: 1.2em; color: #4caf50; font-weight: bold; padding: 5px 10px; border: 2px solid transparent; border-radius: 10px; transition: all 0.3s ease;">שירותים</a></li>
+                <li><a href="testimonials.html" style="text-decoration: none; font-size: 1.2em; color: #4caf50; font-weight: bold; padding: 5px 10px; border: 2px solid transparent; border-radius: 10px; transition: all 0.3s ease;">אנשים כתבו</a></li>
+                <li><a href="blogs.html" style="text-decoration: none; font-size: 1.2em; color: #4caf50; font-weight: bold; padding: 5px 10px; border: 2px solid transparent; border-radius: 10px; transition: all 0.3s ease;">בלוגים ומאמרים</a></li>
+                <li><a href="contact.html" style="text-decoration: none; font-size: 1.2em; color: #4caf50; font-weight: bold; padding: 5px 10px; border: 2px solid transparent; border-radius: 10px; transition: all 0.3s ease;">לפנייה ולקביעת תור</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Blogs Section -->
+    <main>
+        <h2>מאמרים ובלוגים</h2>
+        <div class="articles">
+            <div class="article">
+                <img src="https://via.placeholder.com/200" alt="Article 1">
+                <div class="article-content">
+                    <h3>Article 1</h3>
+                    <a href="https://example.com/article1" class="read-more-link" target="_blank">Read Full Article</a>
+                </div>
+                <div class="admin-controls">
+                    <button onclick="removeArticle(this)">Remove</button>
+                </div>
+            </div>
+            <div class="article">
+                <img src="https://via.placeholder.com/200" alt="Article 2">
+                <div class="article-content">
+                    <h3>Article 2</h3>
+                    <a href="https://example.com/article2" class="read-more-link" target="_blank">Read Full Article</a>
+                </div>
+                <div class="admin-controls">
+                    <button onclick="removeArticle(this)">Remove</button>
+                </div>
+            </div>
+            <div class="article">
+                <img src="https://via.placeholder.com/200" alt="Article 3">
+                <div class="article-content">
+                    <h3>Article 3</h3>
+                    <a href="https://example.com/article3" class="read-more-link" target="_blank">Read Full Article</a>
+                </div>
+                <div class="admin-controls">
+                    <button onclick="removeArticle(this)">Remove</button>
+                </div>
+            </div>
+        </div>
+        <div id="admin-panel" style="display: none; margin-top: 20px;">
+            <h3>Admin Panel - Add Article</h3>
+            <label>Upload PDF:</label><br>
+            <input type="file" id="pdf-upload" accept="application/pdf" style="width: 100%; margin-top: 10px;"><br>
+            <label>Title of the Article:</label><br>
+            <input type="text" id="article-title" placeholder="Enter article title" style="width: 100%; margin-top: 10px;"><br>
+            <label>URL of the Article:</label><br>
+            <input type="url" id="article-url" placeholder="Enter article URL" style="width: 100%; margin-top: 10px;"><br>
+            <button onclick="addArticle()">Add Article</button>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 משי הרטמן - מטפלת NLP. כל הזכויות שמורות.</p>
+    </footer>
+
+    <script>
+        let isAdmin = false; // Initially false
+
+        document.addEventListener('keydown', (event) => {
+            if (event.ctrlKey && event.altKey && event.key === 'm') {
+                const password = prompt('Enter admin password:');
+                if (password === 'admin123') {
+                    isAdmin = true;
+                    document.getElementById('admin-panel').style.display = 'block';
+                    document.querySelectorAll('.admin-controls').forEach(control => {
+                        control.style.display = 'block';
+                    });
+                    alert('Admin mode activated.');
+                } else {
+                    alert('Incorrect password');
+                }
+            }
+        });
+
+        async function addArticle() {
+            if (!isAdmin) {
+                alert('Admin access required.');
+                return;
+            }
+
+            const pdfInput = document.getElementById('pdf-upload');
+            const titleInput = document.getElementById('article-title');
+            const urlInput = document.getElementById('article-url');
+
+            if (pdfInput.files.length === 0) {
+                alert('Please upload a PDF file.');
+                return;
+            }
+
+            const file = pdfInput.files[0];
+            const title = titleInput.value.trim();
+            const url = urlInput.value.trim();
+
+            if (title === '' || url === '') {
+                alert('Please fill in both the title and the URL fields.');
+                return;
+            }
+
+            if (!isValidURL(url)) {
+                alert('Invalid URL format. Please enter a valid URL.');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = async function (e) {
+                const pdfData = new Uint8Array(e.target.result);
+                const pdfLib = await pdfjsLib.getDocument({ data: pdfData }).promise;
+                const page = await pdfLib.getPage(1);
+                const viewport = page.getViewport({ scale: 1 });
+
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+                await page.render({ canvasContext: context, viewport }).promise;
+
+                const imageURL = canvas.toDataURL();
+                createArticle(title, url, imageURL);
+
+                // Reset inputs
+                pdfInput.value = '';
+                titleInput.value = '';
+                urlInput.value = '';
+            };
+
+            reader.readAsArrayBuffer(file);
+        }
+
+        function isValidURL(string) {
+            try {
+                new URL(string);
+                return true;
+            } catch (_) {
+                return false;
+            }
+        }
+
+        function createArticle(title, url, imageURL) {
+            const newArticle = document.createElement('div');
+            newArticle.classList.add('article');
+            newArticle.innerHTML = `
+                <img src="${imageURL}" alt="${title}">
+                <div class="article-content">
+                    <h3>${title}</h3>
+                    <a href="${url}" class="read-more-link" target="_blank">Read Full Article</a>
+                </div>
+                <div class="admin-controls">
+                    <button onclick="removeArticle(this)">Remove</button>
+                </div>
+            `;
+
+            document.querySelector('.articles').appendChild(newArticle);
+        }
+
+        function removeArticle(button) {
+            if (!isAdmin) {
+                alert('Admin access required.');
+                return;
+            }
+            const article = button.closest('.article');
+            article.remove();
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+</body>
+</html>
+>>>>>>> 0e91104 (Initial commit)
