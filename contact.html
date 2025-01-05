@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -136,3 +137,282 @@
     </footer>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>לפנייה ולקביעת תור</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', 'Georgia', serif;
+            background: linear-gradient(to bottom, #e0f7fa, #f1f8e9);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f0f8ff;
+            border-bottom: 2px solid #4caf50;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo-title img {
+            width: 50px;
+            height: 50px;
+            margin-right: 30px;
+        }
+        .logo-title h1 {
+            font-family: 'Lobster', 'Georgia', serif;
+            color: #4caf50;
+            line-height: 1.5;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li a {
+            text-decoration: none;
+            font-size: 1.2em;
+            color: #4caf50;
+            font-weight: bold;
+            padding: 5px 10px;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        nav ul li a.active {
+            background-color: #4caf50;
+            color: white;
+            border: 2px solid #4caf50;
+        }
+        nav ul li a:hover {
+            background-color: #4caf50;
+            color: white;
+            border: 2px solid #4caf50;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f0f8ff;
+            border-top: 2px solid #4caf50;
+        }
+        footer a {
+            color: #4caf50;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        footer a:hover {
+            color: #388e3c;
+        }
+        main {
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: right;
+        }
+        h2 {
+            border: 2px solid #388e3c;
+            padding: 10px;
+            border-radius: 10px;
+            color: #2e7d32;
+            background-color: #e8f5e9;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        input, textarea, button, select {
+            font-family: 'Georgia', serif;
+            font-size: 1em;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background-color: #388e3c;
+            transform: scale(1.05);
+        }
+        .calendar {
+            display: none;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: space-between;
+        }
+        .time-slot {
+            flex: 1 1 45%;
+            padding: 10px;
+            border: 1px solid #4caf50;
+            border-radius: 5px;
+            background-color: #ffffff;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .time-slot.occupied {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        .time-slot:hover:not(.occupied) {
+            background-color: #4caf50;
+            color: white;
+        }
+        .time-slot.active {
+            background-color: #81c784;
+            color: white;
+            border-color: #388e3c;
+        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+            main {
+                padding: 10px;
+            }
+            .calendar .time-slot {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dateInput = document.getElementById('appointmentDate');
+            const calendar = document.querySelector('.calendar');
+            const timeSlots = document.querySelectorAll('.time-slot');
+
+            dateInput.addEventListener('change', function() {
+                if (this.value) {
+                    calendar.style.display = 'flex';
+                }
+            });
+
+            timeSlots.forEach(slot => {
+                slot.addEventListener('click', function () {
+                    if (!this.classList.contains('occupied')) {
+                        document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('active'));
+                        this.classList.add('active');
+                        document.getElementById('selectedTime').value = `${dateInput.value} - ${this.dataset.time}`;
+                        alert(`בחרת את הזמן: ${dateInput.value} - ${this.dataset.time}`);
+                    }
+                });
+            });
+
+            // Set current date as default
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.setAttribute('min', today);
+            dateInput.value = today;
+        });
+
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const selectedTime = document.getElementById('selectedTime').value;
+
+            if (!selectedTime) {
+                alert('יש לבחור זמן לתור.');
+                return;
+            }
+
+            // Construct the email body
+            const emailBody = `
+                תור ייעוץ NLP:
+                שם: ${name}
+                אימייל: ${email}
+                תאריך ושעה: ${selectedTime}
+                הודעה: ${message}
+            `.trim();
+
+            // Encode the email body for mailto
+            const mailtoLink = `mailto:maj.za3atre@gmail.com?subject=${encodeURIComponent(
+                "תור ייעוץ NLP"
+            )}&body=${encodeURIComponent(emailBody)}`;
+
+            // Open mail client
+            window.location.href = mailtoLink;
+
+            // Notify user
+            alert('נפתח דוא"ל ליצירת קשר. ודא שהדוא"ל נשלח.');
+        }
+    </script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo-title">
+            <img src="calm-logo.png" alt="Calm Logo">
+            <h1>משי הרטמן<br>מטפלת NLP</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">בית</a></li>
+                <li><a href="services.html">שירותים</a></li>
+                <li><a href="testimonials.html">אנשים כתבו</a></li>
+                <li><a href="blogs.html">בלוגים ומאמרים</a></li>
+                <li><a href="contact.html" class="active">לפנייה ולקביעת תור</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contact Section -->
+    <main>
+        <h2>לפנייה ולקביעת תור</h2>
+        <form action="#" method="post" onsubmit="handleSubmit(event)">
+            <label for="name">שם:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">אימייל:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">הודעה:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <label for="appointmentDate">בחרו תאריך:</label>
+            <input type="date" id="appointmentDate" name="appointmentDate" required>
+
+            <label for="selectedTime">בחרו זמן:</label>
+            <input type="text" id="selectedTime" name="selectedTime" readonly required>
+
+            <div class="calendar">
+                <div class="time-slot" data-time="08:00 - 10:00">08:00 - 10:00</div>
+                <div class="time-slot" data-time="10:00 - 12:00">10:00 - 12:00</div>
+                <div class="time-slot" data-time="12:00 - 14:00">12:00 - 14:00</div>
+                <div class="time-slot" data-time="14:00 - 16:00">14:00 - 16:00</div>
+                <div class="time-slot" data-time="16:00 - 18:00">16:00 - 18:00</div>
+                <div class="time-slot" data-time="18:00 - 20:00">18:00 - 20:00</div>
+            </div>
+
+            <button type="submit" aria-label="שלח את הטופס">שלח</button>
+        </form>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 משי הרטמן - מטפלת NLP. כל הזכויות שמורות.</p>
+    </footer>
+</body>
+</html>
+>>>>>>> 0e91104 (Initial commit)
