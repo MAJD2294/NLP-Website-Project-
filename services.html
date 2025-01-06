@@ -3,40 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>שירותים</title>
+    <title>משי הרטמן - NLP מטפלת</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            margin: 0;
-            font-family: 'Georgia', serif;
-            background-color: #f0f8ff;
+            font-family: 'Roboto', sans-serif;
         }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #f0f8ff;
-            border-bottom: 2px solid #4caf50;
-        }
-        .logo-title img {
-            width: 50px;
-            height: 50px;
-            margin-right: 30px;
-        }
-        .logo-title h1 {
-            font-family: 'Papyrus', 'Georgia', serif;
-            color: #4caf50;
-            line-height: 1.5;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 15px;
-            margin: 0;
-            padding: 0;
-        }
+
         nav ul li a {
             text-decoration: none;
             font-size: 1.2em;
@@ -47,82 +22,238 @@
             border-radius: 10px;
             transition: all 0.3s ease;
         }
-        nav ul li a.active {
-            background-color: #4caf50;
-            color: white;
-            border: 2px solid #4caf50;
-        }
+
         nav ul li a:hover {
             background-color: #4caf50;
             color: white;
             border: 2px solid #4caf50;
         }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #f0f8ff;
-            border-top: 2px solid #4caf50;
-        }
-        main {
-            margin: 20px auto;
-            max-width: 800px;
-            text-align: right;
-        }
-        h2 {
-            border: 2px solid #4caf50;
-            padding: 10px;
-            border-radius: 10px;
-            color: #4caf50;
-        }
-        ul {
-            list-style-type: disc;
-            padding-right: 20px;
-            font-family: 'Georgia', serif;
-            line-height: 1.8;
-        }
+
         ul li a {
-            color: #4caf50;
             text-decoration: none;
+            font-size: 1.3em;
+            color: #4caf50;
             font-weight: bold;
+            padding: 5px 10px;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            transition: all 0.3s ease;
         }
+
         ul li a:hover {
-            text-decoration: underline;
+            background-color: #4caf50;
+            color: white;
+            border: 2px solid #4caf50;
+            transform: scale(1.1);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #linkForm input {
+            padding: 5px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .delete-btn {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none; /* Hidden by default */
+        }
+
+        .delete-btn:hover {
+            background-color: #ff1a1a;
+        }
+
+        #adminSection {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            border: 2px solid #4caf50;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        #manageLinks {
+            display: none;
         }
     </style>
 </head>
 <body>
     <!-- Header Section -->
-    <header class="header">
-        <div class="logo-title">
-            <img src="calm-logo.png" alt="Calm Logo">
-            <h1>משי הרטמן<br>מטפלת NLP</h1>
+    <header style="display: flex; align-items: center; justify-content: space-between; background-color: #f0f8ff; padding: 10px 20px; border-bottom: 2px solid #4caf50;">
+        <div style="display: flex; align-items: center;">
+            <img src="calm-logo.png" alt="Calm Logo" style="width: 50px; height: 50px; margin-right: 30px;">
+            <h1 style="font-family: 'Papyrus', 'Georgia', serif; font-size: 3em; font-weight: bold; color: #4caf50; line-height: 1.5;">משי הרטמן<br>מטפלת NLP</h1>
         </div>
         <nav>
             <ul>
                 <li><a href="index.html">בית</a></li>
-                <li><a href="services.html" class="active">שירותים</a></li>
+                <li><a href="services.html">שירותים</a></li>
                 <li><a href="testimonials.html">אנשים כתבו</a></li>
                 <li><a href="blogs.html">בלוגים ומאמרים</a></li>
-                <li><a href="contact.html">צרו קשר</a></li>
+                <li><a href="contact.html">לפנייה ולקביעת תור</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Main Content Section -->
     <main>
-        <h2>השירותים שאני מציעה</h2>
-        <ul>
-            <li><a href="heart-strategy.html">לקחת ללב - הדרכה שתעזור לך להפסיק להיפגע בקלות</a></li>
-            <li><a href="self-confidence-kit.html">מתנה - ערכת עזרה ראשונה לימים של חוסר ביטחון</a></li>
-            <li><a href="introvert-guide.html">מופנמת בעולם מוחצן - המדריך להתמודדות בסיטואציות שמערערות לך את הביטחון בלי לוותר על מי שאת</a></li>
-            <li><a href="heart-strategy.html">האסטרטגיה שתעזור לך להפסיק לקחת ללב - HEART STRATEGY</a></li>
-            <li><a href="get-started.html">פגישת יציאה לדרך</a></li>
+        <h2 style="font-family: 'Cursive', serif; font-size: 2em; text-align: center; color: #4caf50;">
+            השירותים שאני מציעה
+        </h2>
+        <ul id="linkList">
+            <li><a href="https://lp.vp4.me/1kqr" target="_blank">לקחת ללב - הדרכה שתעזור לך להפסיק להיפגע בקלות</a><button class="delete-btn">Delete</button></li>
+            <li><a href="https://lp.vp4.me/oshe" target="_blank">מתנה - ערכת עזרה ראשונה לימים של חוסר ביטחון</a><button class="delete-btn">Delete</button></li>
+            <li><a href="https://lp.vp4.me/tqhm" target="_blank">מופנמת בעולם מוחצן - המדריך להתמודדות בסיטואציות שמערערות לך את הביטחון בלי לוותר על מי שאת</a><button class="delete-btn">Delete</button></li>
+            <li><a href="https://lp.vp4.me/1rte" target="_blank">האסטרטגיה שתעזור לך להפסיק לקחת ללב - HEART STRATEGY</a><button class="delete-btn">Delete</button></li>
+            <li><a href="https://lp.vp4.me/tqhs" target="_blank">פגישת יציאה לדרך</a><button class="delete-btn">Delete</button></li>
         </ul>
+
+        <div id="manageLinks">
+            <h3 style="text-align: center; color: #4caf50;">Manage Links</h3>
+            <div style="text-align: center; margin: 20px;">
+                <form id="linkForm" style="margin-bottom: 20px;">
+                    <input type="text" id="linkText" placeholder="Link Text" style="margin-right: 10px;" required>
+                    <input type="url" id="linkUrl" placeholder="Link URL" style="margin-right: 10px;" required>
+                    <button type="submit" style="background-color: #4caf50; color: white; border: none; padding: 5px 10px; border-radius: 5px;">Add Link</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Hidden Admin Section -->
+        <div id="adminSection">
+            <p>Admin Content Goes Here</p>
+        </div>
     </main>
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2024 משי הרטמן - מטפלת NLP. כל הזכויות שמורות.</p>
+        <div style="text-align: center; ">
+            <p>&copy; 2024 משי הרטמן - מטפלת NLP. כל הזכויות שמורות.</p>
+        </div>
     </footer>
+
+    <script>
+        // Hidden Admin Section
+        document.addEventListener('keydown', (event) => {
+            if (event.ctrlKey && event.altKey && event.key === 'm') {
+                const password = prompt('Enter Admin Password:');
+                if (password === 'admin123') { // Replace 'admin123' with your secure password
+                    const adminSection = document.querySelector('#adminSection');
+                    const manageLinks = document.querySelector('#manageLinks');
+                    const deleteButtons = document.querySelectorAll('.delete-btn');
+
+                    if (adminSection && manageLinks) {
+                        adminSection.style.display = 'block'; // Reveal the admin section
+                        manageLinks.style.display = 'block'; // Reveal the manage links functionality
+
+                        // Reveal delete buttons
+                        deleteButtons.forEach((button) => {
+                            button.style.display = 'inline-block';
+                        });
+
+                        alert('Admin section revealed!');
+                    } else {
+                        alert('Admin section or manage links not found!');
+                    }
+                } else {
+                    alert('Incorrect password!');
+                }
+            }
+        });
+
+        // Reference the list and form elements
+        const linkList = document.querySelector('main ul');
+        const linkForm = document.getElementById('linkForm');
+
+        // Handle form submission to add a new link
+        linkForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent form from refreshing the page
+
+            // Get input values
+            const linkText = document.getElementById('linkText').value.trim();
+            const linkUrl = document.getElementById('linkUrl').value.trim();
+
+            if (!linkText || !linkUrl) {
+                // Error message for incomplete fields
+                const errorMsg = document.createElement('p');
+                errorMsg.textContent = 'Error: Both fields are required!';
+                errorMsg.style.color = 'red';
+                errorMsg.id = 'errorMessage';
+                document.body.prepend(errorMsg);
+
+                // Remove error message after 3 seconds
+                setTimeout(() => {
+                    if (document.getElementById('errorMessage')) {
+                        document.getElementById('errorMessage').remove();
+                    }
+                }, 3000);
+
+                return;
+            }
+
+            // Create new list item
+            const newLink = document.createElement('li');
+            const linkElement = document.createElement('a');
+            linkElement.href = linkUrl;
+            linkElement.target = "_blank";
+            linkElement.textContent = linkText;
+            linkElement.style.color = "#4caf50"; // Optional style for new links
+
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Delete';
+            deleteButton.classList.add('delete-btn');
+            deleteButton.style.display = 'inline-block'; // Ensure admin-only visibility for new links
+            deleteButton.addEventListener('click', () => {
+                newLink.remove();
+            });
+
+            newLink.appendChild(linkElement);
+            newLink.appendChild(deleteButton);
+
+            // Add the new link to the list
+            linkList.appendChild(newLink);
+
+            // Show success message
+            const successMsg = document.createElement('p');
+            successMsg.textContent = 'Success: Link added!';
+            successMsg.style.color = 'green';
+            successMsg.id = 'successMessage';
+            document.body.prepend(successMsg);
+
+            // Remove success message after 3 seconds
+            setTimeout(() => {
+                if (document.getElementById('successMessage')) {
+                    document.getElementById('successMessage').remove();
+                }
+            }, 3000);
+
+            // Clear form inputs
+            linkForm.reset();
+        });
+
+        // Add event listeners to existing delete buttons
+        document.querySelectorAll('.delete-btn').forEach((btn) => {
+            btn.addEventListener('click', (event) => {
+                event.target.closest('li').remove();
+            });
+        });
+    </script>
 </body>
 </html>
