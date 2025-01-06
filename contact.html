@@ -1,143 +1,3 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="he" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>צרו קשר</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Georgia', serif;
-            background-color: #f0f8ff;
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #f0f8ff;
-            border-bottom: 2px solid #4caf50;
-        }
-        .logo-title img {
-            width: 50px;
-            height: 50px;
-            margin-right: 30px;
-        }
-        .logo-title h1 {
-            font-family: 'Papyrus', 'Georgia', serif;
-            color: #4caf50;
-            line-height: 1.5;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 15px;
-            margin: 0;
-            padding: 0;
-        }
-        nav ul li a {
-            text-decoration: none;
-            font-size: 1.2em;
-            color: #4caf50;
-            font-weight: bold;
-            padding: 5px 10px;
-            border: 2px solid transparent;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
-        nav ul li a.active {
-            background-color: #4caf50;
-            color: white;
-            border: 2px solid #4caf50;
-        }
-        nav ul li a:hover {
-            background-color: #4caf50;
-            color: white;
-            border: 2px solid #4caf50;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #f0f8ff;
-            border-top: 2px solid #4caf50;
-        }
-        main {
-            margin: 20px auto;
-            max-width: 800px;
-            text-align: right;
-        }
-        h2 {
-            border: 2px solid #4caf50;
-            padding: 10px;
-            border-radius: 10px;
-            color: #4caf50;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        input, textarea, button {
-            font-family: 'Georgia', serif;
-            font-size: 1em;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            background-color: #4caf50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #388e3c;
-        }
-    </style>
-</head>
-<body>
-    <!-- Header Section -->
-    <header class="header">
-        <div class="logo-title">
-            <img src="calm-logo.png" alt="Calm Logo">
-            <h1>משי הרטמן<br>מטפלת NLP</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">בית</a></li>
-                <li><a href="services.html">שירותים</a></li>
-                <li><a href="testimonials.html">אנשים כתבו</a></li>
-                <li><a href="blogs.html">בלוגים ומאמרים</a></li>
-                <li><a href="contact.html" class="active">צרו קשר</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Contact Section -->
-    <main>
-        <h2>צרו קשר</h2>
-        <form action="/submit" method="post">
-            <label for="name">שם:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">אימייל:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">הודעה:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
-            <button type="submit">שלח</button>
-        </form>
-    </main>
-
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 משי הרטמן - מטפלת NLP. כל הזכויות שמורות.</p>
-    </footer>
-</body>
-</html>
-=======
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -264,10 +124,17 @@
             text-align: center;
             cursor: pointer;
             transition: background-color 0.3s;
+            position: relative;
         }
         .time-slot.occupied {
             background-color: #ccc;
             cursor: not-allowed;
+            color: #777;
+        }
+        .time-slot.occupied::after {
+            content: " (תפוס)";
+            color: red;
+            font-size: 0.9em;
         }
         .time-slot:hover:not(.occupied) {
             background-color: #4caf50;
@@ -277,6 +144,46 @@
             background-color: #81c784;
             color: white;
             border-color: #388e3c;
+        }
+        .confirmation {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #4caf50;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            border-radius: 5px;
+        }
+        #constraintsList {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #4caf50;
+            background-color: #f1f8e9;
+            border-radius: 5px;
+        }
+        #constraintsTable {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        #constraintsTable th, #constraintsTable td {
+            border: 1px solid #4caf50;
+            padding: 10px;
+            text-align: center;
+        }
+        #constraintsTable th {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        #constraintsTable td button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+        #constraintsTable td button:hover {
+            background-color: #d32f2f;
         }
         @media (max-width: 768px) {
             .header {
@@ -295,69 +202,6 @@
             }
         }
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const dateInput = document.getElementById('appointmentDate');
-            const calendar = document.querySelector('.calendar');
-            const timeSlots = document.querySelectorAll('.time-slot');
-
-            dateInput.addEventListener('change', function() {
-                if (this.value) {
-                    calendar.style.display = 'flex';
-                }
-            });
-
-            timeSlots.forEach(slot => {
-                slot.addEventListener('click', function () {
-                    if (!this.classList.contains('occupied')) {
-                        document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('active'));
-                        this.classList.add('active');
-                        document.getElementById('selectedTime').value = `${dateInput.value} - ${this.dataset.time}`;
-                        alert(`בחרת את הזמן: ${dateInput.value} - ${this.dataset.time}`);
-                    }
-                });
-            });
-
-            // Set current date as default
-            const today = new Date().toISOString().split('T')[0];
-            dateInput.setAttribute('min', today);
-            dateInput.value = today;
-        });
-
-        function handleSubmit(event) {
-            event.preventDefault(); // Prevent default form submission
-
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            const selectedTime = document.getElementById('selectedTime').value;
-
-            if (!selectedTime) {
-                alert('יש לבחור זמן לתור.');
-                return;
-            }
-
-            // Construct the email body
-            const emailBody = `
-                תור ייעוץ NLP:
-                שם: ${name}
-                אימייל: ${email}
-                תאריך ושעה: ${selectedTime}
-                הודעה: ${message}
-            `.trim();
-
-            // Encode the email body for mailto
-            const mailtoLink = `mailto:maj.za3atre@gmail.com?subject=${encodeURIComponent(
-                "תור ייעוץ NLP"
-            )}&body=${encodeURIComponent(emailBody)}`;
-
-            // Open mail client
-            window.location.href = mailtoLink;
-
-            // Notify user
-            alert('נפתח דוא"ל ליצירת קשר. ודא שהדוא"ל נשלח.');
-        }
-    </script>
 </head>
 <body>
     <!-- Header Section -->
@@ -380,7 +224,7 @@
     <!-- Contact Section -->
     <main>
         <h2>לפנייה ולקביעת תור</h2>
-        <form action="#" method="post" onsubmit="handleSubmit(event)">
+        <form id="appointmentForm" action="#" method="post">
             <label for="name">שם:</label>
             <input type="text" id="name" name="name" required>
 
@@ -407,12 +251,224 @@
 
             <button type="submit" aria-label="שלח את הטופס">שלח</button>
         </form>
+
+        <h2>הגדרת אילוצי זמן</h2>
+        <form id="constraintsForm">
+            <label for="unavailableDate">בחר תאריך:</label>
+            <input type="date" id="unavailableDate" name="unavailableDate" required>
+
+            <label for="unavailableTime">בחר זמן:</label>
+            <select id="unavailableTime" name="unavailableTime" required>
+                <option value="08:00 - 10:00">08:00 - 10:00</option>
+                <option value="10:00 - 12:00">10:00 - 12:00</option>
+                <option value="12:00 - 14:00">12:00 - 14:00</option>
+                <option value="14:00 - 16:00">14:00 - 16:00</option>
+                <option value="16:00 - 18:00">16:00 - 18:00</option>
+                <option value="18:00 - 20:00">18:00 - 20:00</option>
+            </select>
+
+            <label for="constraintOwner">שם האחראי:</label>
+            <input type="text" id="constraintOwner" name="constraintOwner" required>
+
+            <button type="button" id="addConstraint">הוסף אילוץ</button>
+        </form>
+
+        <div id="constraintsList">
+            <h3>רשימת אילוצים:</h3>
+            <table id="constraintsTable">
+                <thead>
+                    <tr>
+                        <th>תאריך</th>
+                        <th>זמן</th>
+                        <th>אחראי</th>
+                        <th>סיבה</th>
+                        <th>פעולה</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
     </main>
 
     <!-- Footer Section -->
     <footer>
         <p>&copy; 2024 משי הרטמן - מטפלת NLP. כל הזכויות שמורות.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('appointmentForm');
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const messageInput = document.getElementById('message');
+            const selectedTimeInput = document.getElementById('selectedTime');
+            const timeSlots = document.querySelectorAll('.time-slot');
+            const dateInput = document.getElementById('appointmentDate');
+            const constraintsTableBody = document.querySelector('#constraintsTable tbody');
+
+            // Object to store unavailable times by date
+            const unavailableTimes = {};
+
+            // Set minimum date to today and maximum date to 30 days from today
+            const today = new Date();
+            const maxDate = new Date();
+            maxDate.setDate(today.getDate() + 30);
+
+            dateInput.min = today.toISOString().split('T')[0];
+            dateInput.max = maxDate.toISOString().split('T')[0];
+
+            form.addEventListener('submit', function (event) {
+
+    event.preventDefault();
+
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const message = messageInput.value.trim();
+    const selectedTime = selectedTimeInput.value.trim();
+
+    if (!selectedTime) {
+        alert('יש לבחור תאריך ושעה לפגישה!');
+        return;
+    }
+
+    const [date, timeRange] = selectedTime.split(' - ');
+
+    // Check if the selected time slot is already occupied
+    if (unavailableTimes[date] && unavailableTimes[date].some(constraint => constraint.time === timeRange)) {
+        alert('החלון שנבחר כבר תפוס!');
+        return;
+    }
+
+    // Add the appointment as a constraint
+    addConstraint(date, timeRange, name, 'פגישה');
+
+    // Mark the timeslot as occupied and add (תפוס)
+    const selectedSlot = Array.from(timeSlots).find(slot => slot.dataset.time === timeRange);
+    if (selectedSlot) {
+        selectedSlot.classList.add('occupied');
+        selectedSlot.textContent += " (תפוס)"; // Add the "(תפוס)" notation
+    }
+
+    alert('הפגישה נקבעה בהצלחה!');
+
+    // Optionally, reset the form for new input
+    form.reset();
+    document.querySelector('.calendar').style.display = 'none';
+});
+
+            timeSlots.forEach(slot => {
+                slot.addEventListener('click', function () {
+                    if (!this.classList.contains('occupied')) {
+                        timeSlots.forEach(s => s.classList.remove('active'));
+                        this.classList.add('active');
+                        selectedTimeInput.value = `${dateInput.value} - ${this.dataset.time}`;
+                    }
+                });
+            });
+
+            dateInput.addEventListener('change', function () {
+                if (this.value) {
+                    document.querySelector('.calendar').style.display = 'flex';
+                    updateUnavailableSlots(this.value);
+                }
+            });
+
+            // Adding constraints functionality
+            const addConstraintButton = document.getElementById('addConstraint');
+            const unavailableDateInput = document.getElementById('unavailableDate');
+            const unavailableTimeSelect = document.getElementById('unavailableTime');
+            const constraintOwnerInput = document.getElementById('constraintOwner');
+
+            addConstraintButton.addEventListener('click', function () {
+                const selectedDate = unavailableDateInput.value;
+                const selectedTime = unavailableTimeSelect.value;
+                const owner = constraintOwnerInput.value;
+
+                addConstraint(selectedDate, selectedTime, owner, 'אילוץ');
+            });
+
+            function addConstraint(date, time, owner, reason) {
+                if (!date || !time || !owner || !reason) {
+                    alert('יש לבחור תאריך וזמן ולמלא את כל השדות!');
+                    return;
+                }
+
+                if (!unavailableTimes[date]) {
+                    unavailableTimes[date] = [];
+                }
+
+                const constraintExists = unavailableTimes[date].some(constraint => constraint.time === time);
+                if (constraintExists) {
+                    alert('אילוץ זה כבר קיים במערכת!');
+                    return;
+                }
+
+                unavailableTimes[date].push({ time, owner, reason });
+
+		
+ 		// Mark the timeslot as occupied and add (תפוס)
+    		const selectedSlot = Array.from(timeSlots).find(slot => slot.dataset.time === time);
+    		if (selectedSlot) {
+        		selectedSlot.classList.add('occupied');
+        		if (!selectedSlot.textContent.includes("(תפוס)")) {
+  		          selectedSlot.textContent += " (תפוס)";
+        			}
+    		}
+
+                renderConstraintsList();
+
+                unavailableDateInput.value = '';
+                unavailableTimeSelect.value = '';
+                constraintOwnerInput.value = '';
+
+                updateUnavailableSlots(date);
+            }
+
+            function updateUnavailableSlots(date) {
+                timeSlots.forEach(slot => {
+                    slot.classList.remove('occupied');
+                    const time = slot.dataset.time;
+                    if (unavailableTimes[date] && unavailableTimes[date].some(constraint => constraint.time === time)) {
+                        slot.classList.add('occupied');
+                    }
+                });
+            }
+
+
+           function renderConstraintsList() {
+                constraintsTableBody.innerHTML = '';
+                Object.keys(unavailableTimes).sort().forEach(date => {
+                    unavailableTimes[date].forEach(({ time, owner, reason }) => {
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `
+                            <td>${date}</td>
+                            <td>${time}</td>
+                            <td>${owner}</td>
+                            <td>${reason}</td>
+                            <td><button>הסר</button></td>
+                        `;
+
+                        const removeButton = tr.querySelector('button');
+                        removeButton.addEventListener('click', () => {
+                            unavailableTimes[date] = unavailableTimes[date].filter(t => t.time !== time);
+                            if (unavailableTimes[date].length === 0) {
+                                delete unavailableTimes[date];
+                            }
+                            renderConstraintsList();
+                            updateUnavailableSlots(date);
+                        });
+
+                        constraintsTableBody.appendChild(tr);
+                    });
+                });
+            }
+        });
+<!--
+function displayMsg() {
+  alert("Hello World!")
+}
+</script>
+
 </body>
 </html>
->>>>>>> 0e91104 (Initial commit)
