@@ -1,5 +1,3 @@
-
-=======
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -9,6 +7,7 @@
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
+        /* Original Styles */
         nav ul li a {
             text-decoration: none;
             font-size: 1.2em;
@@ -101,6 +100,52 @@
             line-height: 1.6;
             margin-left: 20px;
         }
+
+        /* Responsive Styles for Mobile */
+        @media (max-width: 768px) {
+            header {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+                text-align: center;
+            }
+
+            header h1 {
+                font-size: 2.5em;
+                margin: 10px 0;
+            }
+
+            nav ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                padding: 0;
+                margin: 10px 0;
+            }
+
+            .profile-about-container {
+                flex-wrap: wrap;
+                text-align: center;
+                justify-content: center;
+            }
+
+            .profile-section img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .leaf-symbol {
+                display: none;
+            }
+
+            #about, #services {
+                margin: 20px auto;
+                max-width: 90%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -111,24 +156,21 @@
             <h1 style="font-family: 'Papyrus', 'Georgia', serif; font-size: 3em; font-weight: bold; color: #4caf50; line-height: 1.5;">משי הרטמן<br>מטפלת NLP</h1>
         </div>
         <nav>
-    <ul>
-        <li><a href="index.html">בית</a></li>
-        <li><a href="services.html">שירותים</a></li>
-        <li><a href="testimonials.html">אנשים כתבו</a></li>
-        <li><a href="blogs.html">בלוגים ומאמרים</a></li>
-        <li><a href="contact.html">לפנייה ולקביעת תור</a></li>
-    </ul>
-</nav>
-
+            <ul>
+                <li><a href="index.html">בית</a></li>
+                <li><a href="services.html">שירותים</a></li>
+                <li><a href="testimonials.html">אנשים כתבו</a></li>
+                <li><a href="blogs.html">בלוגים ומאמרים</a></li>
+                <li><a href="contact.html">לפנייה ולקביעת תור</a></li>
+            </ul>
+        </nav>
     </header>
 
     <!-- Profile and About Section -->
     <div class="profile-about-container">
-	
         <img src="./images/leaf.png" alt="Leaf Symbol" class="leaf-symbol leaf-left">
         <section class="profile-section">
-        <img src="./images/MESHIS PIC.png" alt="משי הרטמן">
-
+            <img src="./images/MESHIS PIC.png" alt="משי הרטמן">
             <div class="icons">
                 <a href="https://wa.me/+9720558812791" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 <a href="https://www.instagram.com/meshi.hartman_nlp?igsh=YzljYTk1ODg3Zg==" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -140,38 +182,32 @@
         <section id="about">
             <h2 style="margin-right: 20px; border: 2px solid #4caf50; padding: 10px; border-radius: 10px; transition: background-color 0.3s, color 0.3s;">עליי</h2>
             <p style="font-family: 'Georgia', 'Serif'; line-height: 1.6;">אני משי הרטמן, מטפלת NLP מוסמכת עם תואר ראשון בפסיכולוגיה ותשוקה אמיתית לעזור לאנשים לגלות את החוזקות שלהם ולהרגיש בטוחים בעצמם. אני כאן כדי להראות לך שעם הכלים הנכונים והכוונה מדויקת, אפשר להתמודד עם אתגרים, לצמוח מתוכם ולחוות תחושת סיפוק ומשמעות אמיתית.</p>
-            <p style="font-family: 'Georgia',  'Serif'; line-height: 1.6;">אני מאמינה שהחוויה האישית שלך היא ייחודית, ואני כאן כדי להקשיב, להבין, ולהציע כלים מותאמים אישית שיעזרו לך לבנות ביטחון עצמי, לשפר את החשיבה היומיומית וליצור שינויים שמתחברים לאופן שבו אתה רוצה לחיות את חייך.</p>
+            <p style="font-family: 'Georgia', 'Serif'; line-height: 1.6;">אני מאמינה שהחוויה האישית שלך היא ייחודית, ואני כאן כדי להקשיב, להבין, ולהציע כלים מותאמים אישית שיעזרו לך לבנות ביטחון עצמי, לשפר את החשיבה היומיומית וליצור שינויים שמתחברים לאופן שבו אתה רוצה לחיות את חייך.</p>
             <p style="font-family: 'Georgia', 'Serif'; line-height: 1.6;">החיבור האמיתי שלי לאנשים נובע מתוך הבנה עמוקה של מה זה להתמודד עם מחשבות ואתגרים שמרגישים לעיתים מבלבלים או מעכבים. אני מזדהה עם התחושות האלה, ומשם אני מביאה גישה מעשית, מכילה ואותנטית שמובילה לתוצאות.</p>
             <p style="font-family: 'Georgia', 'Serif'; line-height: 1.6;">אם אתה מחפש דרך להתחבר לעצמך מחדש, לגלות את הכוח שבך ולצעוד לעבר העתיד שאתה רוצה – אני כאן כדי ללוות אותך במסע הזה. בוא נעשה את זה יחד.</p>
             <p style="font-family: 'Georgia', 'Serif'; line-height: 1.6;"> תוכלו לעקוב אחר עמוד האינסטגרם בו אני משתפת בידע, כלים פרקטים וכמובן גם סיפורים אישיים.</p>
         </section>
     </div>
 
-
-
-
     <!-- Services Section -->
-   <!-- Services Section -->
-<section id="services" style="text-align: right; max-width: 800px; margin: 20px auto;">
-    <h2 style="font-size: 1.8em; text-align: center; margin-bottom: 20px;">השירותים שאני מציעה</h2>
-      <p style="font-family: 'Georgia', 'Serif'; line-height: 1.6;">
-        בתהליך האישי שאנו עוברים יחד, אני מתמקד במגוון רחב של תחומים שמטרתם לעזור לך 
-        לצמוח ולהתפתח. בין אם זה שיפור הביטחון העצמי והדימוי העצמי שלך, ניהול סטרס 
-        וחרדות בצורה אפקטיבית, או שיפור מערכות היחסים בחייך, אני כאן כדי ללוות אותך. 
-    </p>
-    <p style="font-family: 'Georgia', 'Serif'; line-height: 1.6;">
-        נלמד להציב מטרות ולהשיגן, לשחרר הרגלים לא רצויים ולהתמודד עם משברים בצורה 
-        שתעצים אותך. נעמיק בפיתוח ביצועים מקצועיים וספורטיביים, ונפתח את היצירתיות 
-        ויכולת החשיבה החיובית שלך. אם חשוב לך לשפר מיומנויות למידה, לעבוד על טראומות 
-        מן העבר, לבנות חוסן רגשי, או להתאים את התקשורת העצמית שלך – התהליך הזה הוא 
-        בדיוק בשבילך.
-    </p>
-    <p style="font-family: 'Georgia', 'Serif'; line-height: 1.6;">
-        יחד, נמצא את הדרך שמתאימה לך כדי להגיע לגרסה הטובה ביותר של עצמך.
-    </p>
-
-</section>
-
+    <section id="services" style="text-align: right; max-width: 800px; margin: 20px auto;">
+        <h2 style="font-size: 1.8em; text-align: center; margin-bottom: 20px;">השירותים שאני מציעה</h2>
+        <p style="font-family: 'Georgia', 'Serif'; line-height: 1.6;">
+            בתהליך האישי שאנו עוברים יחד, אני מתמקד במגוון רחב של תחומים שמטרתם לעזור לך 
+            לצמוח ולהתפתח. בין אם זה שיפור הביטחון העצמי והדימוי העצמי שלך, ניהול סטרס 
+            וחרדות בצורה אפקטיבית, או שיפור מערכות היחסים בחייך, אני כאן כדי ללוות אותך. 
+        </p>
+        <p style="font-family: 'Georgia', 'Serif'; line-height: 1.6;">
+            נלמד להציב מטרות ולהשיגן, לשחרר הרגלים לא רצויים ולהתמודד עם משברים בצורה 
+            שתעצים אותך. נעמיק בפיתוח ביצועים מקצועיים וספורטיביים, ונפתח את היצירתיות 
+            ויכולת החשיבה החיובית שלך. אם חשוב לך לשפר מיומנויות למידה, לעבוד על טראומות 
+            מן העבר, לבנות חוסן רגשי, או להתאים את התקשורת העצמית שלך – התהליך הזה הוא 
+            בדיוק בשבילך.
+        </p>
+        <p style="font-family: 'Georgia', 'Serif'; line-height: 1.6;">
+            יחד, נמצא את הדרך שמתאימה לך כדי להגיע לגרסה הטובה ביותר של עצמך.
+        </p>
+    </section>
 
     <!-- Footer Section -->
     <footer>
