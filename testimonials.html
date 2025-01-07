@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html dir="rtl" lang="he">
 <head>
@@ -53,11 +54,7 @@
             min-width: 300px;
             flex-shrink: 0;
         }
-	    
-        .testimonials-container::-webkit-scrollbar {
-            display: none; /* For Chrome, Safari, and Edge */
-        }
-	    
+
         .testimonial:hover {
             background-color: #f0f8ff;
             transform: scale(1.02);
@@ -415,14 +412,13 @@
             testimonial.className = 'testimonial';
             testimonial.setAttribute('onclick', 'toggleDetails(this)');
 
-    // Add word-wrap functionality to the content
-    testimonial.innerHTML = `
-        <button class="remove-button" onclick="removeTestimonial(event, this)">×</button>
-        <img src="${imageUrl}" alt="Client Photo">
-        <div class="testimonial-content" style="overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; white-space: normal;">
-            <p>${text}</p>
-        </div>
-    `;
+            testimonial.innerHTML = `
+                <button class="remove-button" onclick="removeTestimonial(event, this)">×</button>
+                <img src="${imageUrl}" alt="Client Photo">
+                <div class="testimonial-content">
+                    <p>${text}</p>
+                </div>
+            `;
 
             container.appendChild(testimonial);
             document.getElementById('testimonial-image').value = '';
