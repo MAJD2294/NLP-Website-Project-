@@ -195,14 +195,46 @@
         .admin-button:hover {
             background-color: #2e7d32;
         }
-
+	/* Responsive Styles */
+        @media (max-width: 768px) {
+            header {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                text-align: center;
+            }
+            header h1 {
+                font-size: 2em;
+            }
+            nav ul {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+            .testimonials-container {
+                flex-wrap: wrap;
+                justify-content: center;
+                overflow-x: hidden;
+            }
+            .testimonial {
+                min-width: unset;
+                width: 90%;
+            }
+            .scroll-arrow {
+                display: none;
+            }
+            footer {
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Header Section -->
     <header style="display: flex; align-items: center; justify-content: space-between; background-color: #f0f8ff; padding: 10px 20px; border-bottom: 2px solid #4caf50;">
         <div style="display: flex; align-items: center;">
-            <img src="./images/calm-logo.png" alt="Calm Logo" style="width: 50px; height: 50px; margin-left: 30px;">
+            <img src="calm-logo.png" alt="Calm Logo" style="width: 50px; height: 50px; margin-left: 30px;">
             <h1 style="font-family: 'Papyrus', 'Georgia', serif; font-size: 3em; font-weight: bold; color: #4caf50; line-height: 1.5;">משי הרטמן<br>מטפלת NLP</h1>
         </div>
         <nav>
@@ -222,7 +254,7 @@
         <div class="testimonials-container" id="testimonials">
             <div class="testimonial" onclick="toggleDetails(this)">
                 <button class="remove-button" onclick="removeTestimonial(event, this)">×</button>
-                <img src="./images/no_profile_man.jpg" alt="Client Photo">
+                <img src="no_profile_man.jpg" alt="Client Photo">
                 <div class="testimonial-content">
                     <p><strong>״משי עזרה לי מאוד להתמודד עם אתגרים אישיים״</strong></p>
                     <p>בזכות התהליך שעברתי, אני מרגישה מחוזקת ובטוחה יותר בעצמי.</p>
@@ -230,7 +262,7 @@
             </div>
             <div class="testimonial" onclick="toggleDetails(this)">
                 <button class="remove-button" onclick="removeTestimonial(event, this)">×</button>
-                <img src="./images/no_profile_woman.jpeg" alt="Client Photo">
+                <img src="no_profile_woman.jpeg" alt="Client Photo">
                 <div class="testimonial-content">
                     <p><strong>״אני ממליץ בחום על משי כמטפלת NLP!״</strong></p>
                     <p>התהליך היה מעמיק ואפקטיבי בצורה שלא תיארתי לעצמי.</p>
@@ -238,7 +270,7 @@
             </div>
             <div class="testimonial" onclick="toggleDetails(this)">
                 <button class="remove-button" onclick="removeTestimonial(event, this)">×</button>
-                <img src="./images/no_profile_man.jpg" alt="Client Photo">
+                <img src="no_profile_man.jpg" alt="Client Photo">
                 <div class="testimonial-content">
                     <p><strong>״סיפור הצלחה עם עשר שורות״</strong></p>
                     <p>
@@ -257,7 +289,7 @@
             </div>
             <div class="testimonial" onclick="toggleDetails(this)">
                 <button class="remove-button" onclick="removeTestimonial(event, this)">×</button>
-                <img src="./images/no_profile_woman.jpeg" alt="Client Photo">
+                <img src="no_profile_woman.jpeg" alt="Client Photo">
                 <div class="testimonial-content">
                     <p><strong>״חוויה מרגשת ומחזקת לכל המשפחה״</strong></p>
                     <p>כל מפגש היה מרתק ומשמעותי, תודה רבה על התמיכה.</p>
@@ -265,7 +297,7 @@
             </div>
             <div class="testimonial" onclick="toggleDetails(this)">
                 <button class="remove-button" onclick="removeTestimonial(event, this)">×</button>
-                <img src="./images/no_profile_man.jpg" alt="Client Photo">
+                <img src="no_profile_man.jpg" alt="Client Photo">
                 <div class="testimonial-content">
                     <p><strong>״כלים חשובים להתמודדות עם לחצים״</strong></p>
                     <p>הטיפול שינה את חיי והעניק לי פרספקטיבה חדשה.</p>
