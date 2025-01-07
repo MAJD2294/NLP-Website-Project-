@@ -1,50 +1,50 @@
- Responsive Styles for Mobile 
-@media (max-width 768px) {
+/* Responsive Styles */
+@media (max-width: 768px) {
     header {
-        display flex;
-        flex-wrap wrap;
-        justify-content center;
-        align-items center;
-        padding 10px;
-        text-align center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        text-align: center;
     }
 
     header h1 {
-        font-size 2.5em;
-        margin 10px 0;
+        font-size: 2.5em;
+        margin: 10px 0;
     }
 
     nav ul {
-        display flex;
-        flex-direction column;
-        align-items center;
-        gap 10px;
-        padding 0;
-        margin 10px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 0;
+        margin: 10px 0;
     }
 
     .profile-about-container {
-        flex-wrap wrap;
-        text-align center;
-        justify-content center;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
     }
 
     .profile-section img {
-        width 200px;
-        height 200px;
+        width: 200px;
+        height: 200px;
     }
 
     .leaf-symbol {
-        display none;
+        display: none;
     }
 
     #about, #services {
-        margin 20px auto;
-        max-width 90%;
+        margin: 20px auto;
+        max-width: 90%;
     }
 
     footer {
-        text-align center;
-        padding 10px;
+        text-align: center;
+        padding: 10px;
     }
 }
