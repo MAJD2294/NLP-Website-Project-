@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html dir="rtl" lang="he">
 <head>
@@ -70,13 +69,10 @@
             margin-left: 10px;
         }
 
-	.testimonial-content {
- 	    overflow-wrap: break-word; /* Break long words */
-  	    word-wrap: break-word; /* Legacy */
-   	    word-break: break-word; /* Modern */
-   	    white-space: normal; /* Allow wrapping */
-   	    overflow: hidden; /* Optional: Hide extra content */
-  	    text-overflow: ellipsis; /* Optional: Add ellipsis for overflow */
+        .testimonial-content {
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            max-height: 50px;
         }
 
         .testimonial.expanded .testimonial-content {
