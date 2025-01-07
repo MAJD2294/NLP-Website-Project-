@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>משי הרטמן - NLP מטפלת</title>
     <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* Original Styles */
         body {
             font-family: 'Roboto', sans-serif;
         }
@@ -93,6 +94,55 @@
         #manageLinks {
             display: none;
         }
+
+        /* Responsive Styles for Phones */
+        @media (max-width: 768px) {
+            header {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                padding: 10px;
+            }
+
+            header h1 {
+                font-size: 2.5em;
+                margin: 10px 0;
+            }
+
+            nav ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            ul li {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            ul li a {
+                font-size: 1.1em;
+                text-align: center;
+            }
+
+            #linkForm {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+
+            #adminSection {
+                margin: 20px auto;
+                width: 90%;
+            }
+
+            footer {
+                text-align: center;
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -149,112 +199,5 @@
             <p>&copy; 2024 משי הרטמן - מטפלת NLP. כל הזכויות שמורות.</p>
         </div>
     </footer>
-
-    <script>
-        // Hidden Admin Section
-        document.addEventListener('keydown', (event) => {
-            if (event.ctrlKey && event.altKey && event.key === 'm') {
-                const password = prompt('Enter Admin Password:');
-                if (password === 'admin123') { // Replace 'admin123' with your secure password
-                    const adminSection = document.querySelector('#adminSection');
-                    const manageLinks = document.querySelector('#manageLinks');
-                    const deleteButtons = document.querySelectorAll('.delete-btn');
-
-                    if (adminSection && manageLinks) {
-                        adminSection.style.display = 'block'; // Reveal the admin section
-                        manageLinks.style.display = 'block'; // Reveal the manage links functionality
-
-                        // Reveal delete buttons
-                        deleteButtons.forEach((button) => {
-                            button.style.display = 'inline-block';
-                        });
-
-                        alert('Admin section revealed!');
-                    } else {
-                        alert('Admin section or manage links not found!');
-                    }
-                } else {
-                    alert('Incorrect password!');
-                }
-            }
-        });
-
-        // Reference the list and form elements
-        const linkList = document.querySelector('main ul');
-        const linkForm = document.getElementById('linkForm');
-
-        // Handle form submission to add a new link
-        linkForm.addEventListener('submit', (event) => {
-            event.preventDefault(); // Prevent form from refreshing the page
-
-            // Get input values
-            const linkText = document.getElementById('linkText').value.trim();
-            const linkUrl = document.getElementById('linkUrl').value.trim();
-
-            if (!linkText || !linkUrl) {
-                // Error message for incomplete fields
-                const errorMsg = document.createElement('p');
-                errorMsg.textContent = 'Error: Both fields are required!';
-                errorMsg.style.color = 'red';
-                errorMsg.id = 'errorMessage';
-                document.body.prepend(errorMsg);
-
-                // Remove error message after 3 seconds
-                setTimeout(() => {
-                    if (document.getElementById('errorMessage')) {
-                        document.getElementById('errorMessage').remove();
-                    }
-                }, 3000);
-
-                return;
-            }
-
-            // Create new list item
-            const newLink = document.createElement('li');
-            const linkElement = document.createElement('a');
-            linkElement.href = linkUrl;
-            linkElement.target = "_blank";
-            linkElement.textContent = linkText;
-            linkElement.style.color = "#4caf50"; // Optional style for new links
-
-            const deleteButton = document.createElement('button');
-            deleteButton.textContent = 'Delete';
-            deleteButton.classList.add('delete-btn');
-            deleteButton.style.display = 'inline-block'; // Ensure admin-only visibility for new links
-            deleteButton.addEventListener('click', () => {
-                newLink.remove();
-            });
-
-            newLink.appendChild(linkElement);
-            newLink.appendChild(deleteButton);
-
-            // Add the new link to the list
-            linkList.appendChild(newLink);
-
-            // Show success message
-            const successMsg = document.createElement('p');
-            successMsg.textContent = 'Success: Link added!';
-            successMsg.style.color = 'green';
-            successMsg.id = 'successMessage';
-            document.body.prepend(successMsg);
-
-            // Remove success message after 3 seconds
-            setTimeout(() => {
-                if (document.getElementById('successMessage')) {
-                    document.getElementById('successMessage').remove();
-                }
-            }, 3000);
-
-            // Clear form inputs
-            linkForm.reset();
-        });
-
-        // Add event listeners to existing delete buttons
-        document.querySelectorAll('.delete-btn').forEach((btn) => {
-            btn.addEventListener('click', (event) => {
-                event.target.closest('li').remove();
-            });
-        });
-    </script>
 </body>
 </html>
